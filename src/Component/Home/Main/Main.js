@@ -78,9 +78,9 @@ export default function Main() {
   return (
     <TabsUnstyled defaultValue={0} id="main">
       <TabsList>
-        <Tab>One</Tab>
-        <Tab>Two</Tab>
-        <Tab>Three</Tab>
+        <Tab>FLIGHT</Tab>
+        <Tab>CARS</Tab>
+        <Tab>VISA</Tab>
       </TabsList>
       <TabPanel value={0}>First content</TabPanel>
       <TabPanel value={1}>Second content</TabPanel>
