@@ -95,7 +95,7 @@ export default function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="" id="logo" />
           </div>
           <div className="rightTool">
             <select id="select">

@@ -20,20 +20,21 @@ const blue = {
 };
 
 const Tab = styled(TabUnstyled)`
+  width: 170px;
+  height: 40px;
   font-family: IBM Plex Sans, sans-serif;
-  color: white;
+  color: #0c0cf4;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: bold;
-  background-color: transparent;
-  width: 100%;
-  padding: 12px 16px;
-  margin: 6px 6px;
-  border: none;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
   display: flex;
   justify-content: center;
-
+  align-items: center;
   &:hover {
     background-color: ${blue[400]};
   }
@@ -57,20 +58,26 @@ const Tab = styled(TabUnstyled)`
 `;
 
 const TabPanel = styled(TabPanelUnstyled)`
-  width: 100%;
+  width: 1140px;
+  height: 280px;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 `;
 
 const TabsList = styled(TabsListUnstyled)`
   min-width: 320px;
   width: 1140px;
-  background-color: ${blue[500]};
+  background-color: white;
   border-radius: 8px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   align-content: space-between;
 `;
 
@@ -79,12 +86,12 @@ export default function Main() {
     <TabsUnstyled defaultValue={0} id="main">
       <TabsList>
         <Tab>One</Tab>
-        <Tab>Two</Tab>
-        <Tab>Three</Tab>
+        {/* <Tab>Two</Tab>
+        <Tab>Three</Tab> */}
       </TabsList>
       <TabPanel value={0}>First content</TabPanel>
-      <TabPanel value={1}>Second content</TabPanel>
-      <TabPanel value={2}>Third content</TabPanel>
+      {/* <TabPanel value={1}>Second content</TabPanel>
+      <TabPanel value={2}>Third content</TabPanel> */}
     </TabsUnstyled>
   );
 }
