@@ -1,10 +1,23 @@
 import * as React from "react";
-import { styled } from "@mui/system";
+import NativePickers from "./Date";
+import { padding, styled } from "@mui/system";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import { buttonUnstyledClasses } from "@mui/base/ButtonUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
+
+
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Container } from "@mui/material";
+
 
 const blue = {
   50: "#F0F7FF",
@@ -85,6 +98,7 @@ export default function Main() {
   return (
     <TabsUnstyled defaultValue={0} id="main">
       <TabsList>
+<<<<<<< HEAD
         <Tab>One</Tab>
         {/* <Tab>Two</Tab>
         <Tab>Three</Tab> */}
@@ -92,6 +106,72 @@ export default function Main() {
       <TabPanel value={0}>First content</TabPanel>
       {/* <TabPanel value={1}>Second content</TabPanel>
       <TabPanel value={2}>Third content</TabPanel> */}
+=======
+        <Tab>FLIGHT</Tab>
+        <Tab>CARS</Tab>
+        <Tab>VISA</Tab>
+      </TabsList>
+      <TabPanel value={0}>
+      <div style={{width:"auto",height:"280px",border:"0.1px solid gray",boxShadow:"0.1px 2px 0.1px 2px ", padding:"5px"}}>
+      <FormControl>
+      <FormLabel id="demo-row-radio-buttons-group-label"></FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
+      >
+        <FormControlLabel value="Oneway" control={<Radio />} label="Oneway" />
+        <FormControlLabel value="Return" control={<Radio />} label="Return" />
+        <FormControlLabel value="Multicity" control={<Radio />} label="Multicity" />
+        
+      </RadioGroup>
+    </FormControl>
+    
+    <Container>
+    <Box
+    component="form"
+    sx={{
+      '& .MuiTextField-root': { m: 1, width: '25ch',flexDirection: 'row' },
+    }}
+    noValidate
+    autoComplete="off"
+    
+    >
+      
+      <Box sx={{
+      display:'inline-flex',flexDirection:'row'
+    }}>
+      <h3>From</h3>
+      <TextField
+
+        
+          id="from-input"
+          label="Type city name or airport"
+          type="From"
+          autoComplete="current-password"
+          variant="filled"
+        />
+        <TextField
+          id="from-input"
+          label="Type city name or airport"
+          type="From"
+          autoComplete="current-password"
+          variant="filled"
+        />
+        </Box>
+        <Box  >
+        <NativePickers/>
+        </Box>
+        
+    </Box>
+    </Container>
+      </div >
+      
+
+      </TabPanel>
+      <TabPanel value={1}>Second content</TabPanel>
+      <TabPanel value={2}>Third content</TabPanel>
+>>>>>>> 59b2603aa0dce373d4a4fe2c6b21e3be5b446055
     </TabsUnstyled>
   );
 }
