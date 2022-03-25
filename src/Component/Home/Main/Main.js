@@ -1,6 +1,7 @@
 import * as React from "react";
 import NativePickers from "./Date";
-import { padding, styled } from "@mui/system";
+import UnstyledSelectSimple from "../Dropdown";
+import { display, padding, styled } from "@mui/system";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
@@ -16,8 +17,11 @@ import FormLabel from '@mui/material/FormLabel';
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows'
 
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const blue = {
   50: "#F0F7FF",
@@ -112,7 +116,7 @@ export default function Main() {
         <Tab>VISA</Tab>
       </TabsList>
       <TabPanel value={0}>
-      <div style={{width:"auto",height:"280px",border:"0.1px solid gray",boxShadow:"0.1px 2px 0.1px 2px ", padding:"5px"}}>
+      <Container style={{width:"auto",height:"280px",boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25) ", padding:"10px"}}>
       <FormControl>
       <FormLabel id="demo-row-radio-buttons-group-label"></FormLabel>
       <RadioGroup
@@ -127,21 +131,21 @@ export default function Main() {
       </RadioGroup>
     </FormControl>
     
-    <Container>
+    
     <Box
     component="form"
     sx={{
-      '& .MuiTextField-root': { m: 1, width: '25ch',flexDirection: 'row' },
+      display:'flex',justifyContent:'space-between',
+      alignItems:'center',flexWrap:'wrap'
+      ,'& .MuiTextField-root': { m: 1, width: '25ch',flexDirection: 'row' },
     }}
     noValidate
     autoComplete="off"
     
     >
       
-      <Box sx={{
-      display:'inline-flex',flexDirection:'row'
-    }}>
-      <h3>From</h3>
+      <Box sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+      
       <TextField
 
         
@@ -151,6 +155,7 @@ export default function Main() {
           autoComplete="current-password"
           variant="filled"
         />
+        <CompareArrowsIcon/>
         <TextField
           id="from-input"
           label="Type city name or airport"
@@ -159,13 +164,46 @@ export default function Main() {
           variant="filled"
         />
         </Box>
+
         <Box  >
         <NativePickers/>
         </Box>
+
+        
         
     </Box>
-    </Container>
-      </div >
+    <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <Box sx={{display:'flex',flexWrap:'wrap'}}>
+          <Box sx={{display:'flex',justifyContent:'center',alignItems:'start',flexDirection:'column'}} >
+            <Typography component='div' variant='h5' gutterBottom> Adults </Typography>
+            <Typography component='div' variant='p' gutterBottom> 12+ Years </Typography>
+            <UnstyledSelectSimple/>
+          </Box>
+          <Box>
+            <Typography component='div' variant='h5' gutterBottom> Children </Typography>
+            <Typography component='div' variant='p' gutterBottom>2-12 Years</Typography>
+            <UnstyledSelectSimple/>
+          </Box>
+          <Box>
+            <Typography component='div' variant='h5' gutterBottom> Infants </Typography>
+            <Typography component='div' variant='p' gutterBottom> 0-23 Months</Typography>
+            <UnstyledSelectSimple/>
+          </Box>
+        </Box>
+
+      <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <Stack  direction="row"  spacing={2}>
+      
+      <Button variant="contained" size="large" color="success">
+        Search
+      </Button>
+      
+    </Stack>
+      </Box>
+
+
+        </Box>
+      </Container >
       
 
       </TabPanel>

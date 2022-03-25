@@ -9,7 +9,7 @@ export default function NativePickers() {
         <Box sx={{display:'inline-flex',flexWrap:'wrap'}}>
         <TextField
           id="date"
-          label="Birthday"
+          label="Departure Date"
           type="date"
           defaultValue="2017-05-24"
           sx={{ width: 220 }}
@@ -19,7 +19,7 @@ export default function NativePickers() {
         />
         <TextField
           id="date"
-          label="Birthday"
+          label="Returning Date"
           type="date"
           defaultValue="2017-05-24"
           sx={{ width: 220 }}
