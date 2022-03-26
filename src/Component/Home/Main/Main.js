@@ -5,6 +5,21 @@ import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import { buttonUnstyledClasses } from "@mui/base/ButtonUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
+import { Button, Container, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
+import { Margin } from "@mui/icons-material";
+import NativePickers from "./Date";
+import UnstyledSelectSimple from "../Dropdown";
+
+
 
 const blue = {
   50: "#F0F7FF",
@@ -85,11 +100,75 @@ export default function Main() {
   return (
     <TabsUnstyled defaultValue={0} id="main">
       <TabsList>
-        <Tab>One</Tab>
+        <Tab>FLIGHT</Tab>
         {/* <Tab>Two</Tab>
         <Tab>Three</Tab> */}
       </TabsList>
-      <TabPanel value={0}>First content</TabPanel>
+      <TabPanel value={0}>
+        
+        
+        <Container sx={{display:'flex', justifyContent:'space-between',alignItems:'center',padding:'10px'}}  maxWidth="lg">
+          
+        <Box sx={{display:'flex',alignItems:'center'}}>
+          <Box>
+    <Typography >From</Typography>
+      <TextField id="standard-basic" label="Type city name or airport" variant="standard" />
+      </Box>
+      <CompareArrowsIcon sx={{alignSelf:'end',margin:'10px 8px 0px 8px'}} />
+        <Box>
+      <Typography>To</Typography>
+      <TextField id="standard-basic" label="Type city name or airport" variant="standard" />
+      </Box>
+
+      </Box>
+
+{/* Date */}
+
+      <Box >
+        
+      <NativePickers/>
+      
+      </Box>
+      
+
+        </Container>
+
+        <Container sx={{display:'flex'}}>
+          <Box sx={{display:'flex'}}>
+
+          
+          <Box>
+            <Typography>
+              <h5>Adults</h5>
+              <p>12+ Years</p>
+            </Typography>
+          <UnstyledSelectSimple/>
+          </Box>
+          <Box>
+            <Typography>
+              <h5>Children</h5>
+              <p>2-12 Years</p>
+            </Typography>
+          <UnstyledSelectSimple/>
+          </Box>
+          <Box>
+            <Typography>
+              <h5>Infants</h5>
+              <p>0-23 Months</p>
+            </Typography>
+          <UnstyledSelectSimple/>
+          </Box>
+          </Box>
+
+            <Box sx={{display:'flex',alignItems:'center'}}>
+              <Button sx={
+                {marginLeft:'200px',paddingInline:'100px',marginTop:'100px'}
+              } variant="contained">Search</Button>
+            </Box>
+
+        </Container>
+
+      </TabPanel>
       {/* <TabPanel value={1}>Second content</TabPanel>
       <TabPanel value={2}>Third content</TabPanel> */}
     </TabsUnstyled>

@@ -15,11 +15,12 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import "./Navbar.css";
 import Logo from "../../../assets/Logo.svg";
 import Avatar from "../../../assets/account_circle_black_24dp 1.svg";
+import HomeIcon from '@mui/icons-material/Home';
+import SafetyCheckIcon from '@mui/icons-material/SafetyCheck';
 
 const drawerWidth = 240;
 
@@ -133,7 +134,7 @@ export default function Navbar() {
           {["Home", "Travel advisory", "insurance", "EMI"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <HomeIcon/> : <TravelExploreIcon/>}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -144,7 +145,7 @@ export default function Navbar() {
           {["Travel VISA", "Blog", "About us","Help"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <SafetyCheckIcon/> : <SafetyCheckIcon/>}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
