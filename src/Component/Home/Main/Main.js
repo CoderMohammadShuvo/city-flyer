@@ -17,6 +17,7 @@ import Grid from '@mui/material/Grid';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { Margin } from "@mui/icons-material";
 import NativePickers from "./Date";
+import Login from "../../pages/Login";
 import UnstyledSelectSimple from "../Dropdown";
 
 
@@ -168,9 +169,13 @@ export default function Main() {
 
         </Container>
 
+        <Login/>
+
       </TabPanel>
       {/* <TabPanel value={1}>Second content</TabPanel>
       <TabPanel value={2}>Third content</TabPanel> */}
     </TabsUnstyled>
+    
+
   );
 }
