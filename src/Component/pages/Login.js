@@ -2,8 +2,8 @@ import { Container } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import './Login.css'
-import Slider from '../Slider/Slider';
-import SignInSide from '../Signin';
+
+import SignInSide from '../pages/Signin';
 
 
 const Login = () => {

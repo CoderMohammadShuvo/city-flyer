@@ -17,9 +17,10 @@ import Grid from '@mui/material/Grid';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { Margin, Search } from "@mui/icons-material";
 import NativePickers from "./Date";
-import Login from "../../pages/Login";
-import UnstyledSelectSimple from "../Dropdown";
-import SearchPage from "../../SearchPage"
+
+import UnstyledSelectSimple from "../../pages/Dropdown";
+import Navbar from "../Navbar/Navbar";
+
 
 
 
@@ -101,6 +102,9 @@ const TabsList = styled(TabsListUnstyled)`
 
 export default function Main() {
   return (
+    <>
+    <Navbar/>
+
     <TabsUnstyled defaultValue={0} id="main">
       <TabsList>
         <Tab>FLIGHT</Tab>
@@ -172,19 +176,15 @@ export default function Main() {
         </Container>
               
 
-              
-        <Login/>
+                  
 
-        <Box sx={{mt:'100px'}}>
-        <SearchPage/>
         
-        </Box>
       </TabPanel>
       
       {/* <TabPanel value={1}>Second content</TabPanel>
       <TabPanel value={2}>Third content</TabPanel> */}
     </TabsUnstyled>
     
-
+    </>
   );
 }
