@@ -14,7 +14,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
+import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import { Margin, Search } from "@mui/icons-material";
 import NativePickers from "./Date";
 
@@ -121,7 +121,7 @@ export default function Main() {
     <Typography >From</Typography>
       <TextField id="standard-basic" label="Type city name or airport" variant="standard" />
       </Box>
-      <CompareArrowsIcon sx={{alignSelf:'end',margin:'10px 8px 0px 8px'}} />
+      <ConnectingAirportsIcon sx={{alignSelf:'end',margin:'10px 8px 0px 8px'}} />
         <Box>
       <Typography>To</Typography>
       <TextField id="standard-basic" label="Type city name or airport" variant="standard" />
