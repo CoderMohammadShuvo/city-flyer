@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +13,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleButton from 'react-google-button';
+import SignUp from './SignUp';
+import { NavLink } from 'react-router-dom';
+import { useUserAuth } from '../../context/UserAuthContext';
+import { useNavigate } from "react-router-dom";
+
+
+
 
 
 function Copyright(props) {
@@ -20,7 +27,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        TheCityFlyers
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -31,13 +38,33 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate("/home");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { logIn, googleSignIn } = useUserAuth();
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -83,8 +110,10 @@ export default function SignInSide() {
                 id="email"
                 label="Email or phone"
                 name="email"
+                type="email"
                 autoComplete="email"
                 autoFocus
+                onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
                 margin="normal"
@@ -95,6 +124,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -115,15 +145,17 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <NavLink to="/SignUp" style={isActive => ({
+    color: isActive ? "green" : "blue"  })}>
                     {"Don't have an account? Sign Up"}
-                  </Link>
+                    
+                  </NavLink>
                   
                 </Grid>
                 
               </Grid>
               <Box  sx={{width:'auto',display:'flex',justifyContent:'center',alignItems:'center',mt:'20px'}}>
-              <GoogleButton  label='Continue with google' />
+              <GoogleButton onClick={handleGoogleSignIn}  label='Continue with google' />
               </Box>
               <Copyright   sx={{ mt: 5 }} />
             </Box>

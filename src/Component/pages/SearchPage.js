@@ -6,6 +6,7 @@ import Box1 from '../SearchPageComponent/1st box/Box1';
 import Box2 from '../SearchPageComponent/2nd box/Box2';
 import Box3 from '../SearchPageComponent/3rd box/Box3';
 import Box4 from '../SearchPageComponent/4th box/Box4';
+import Box5 from '../SearchPageComponent/5th box/Box5';
 const Searchpage = () => {
   return (
     <Container sx={{
@@ -31,6 +32,9 @@ const Searchpage = () => {
       {/* 4th box start */}
       <Box4/>
       {/* 4th box end */}
+
+      {/* 5th box start */}
+      <Box5/>
     </Container>
   );
 }
