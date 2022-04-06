@@ -7,7 +7,7 @@ import Searchpage from "./Component/pages/SearchPage";
 import SignUp from "./Component/pages/SignUp";
 import {UserAuthContextProvider} from "./context/UserAuthContext";
 import ProtectedRoute from "./Component/ProtectedRoute";
-
+import Namefield from "./Component/pages/NameField";
 
 
 
@@ -20,6 +20,8 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="Search" element={<Searchpage />} />
         <Route path="SignUp" element={<SignUp />} />
+        <Route path="Namefield" element={<Namefield />} />
+        
         
       </Routes>
       </UserAuthContextProvider>

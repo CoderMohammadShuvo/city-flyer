@@ -1,6 +1,23 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
+import "./Box5.css"
+
+
+const  TORONTO= () => {
+  return (
+    <div className="d-a-c---t-o-r-o-n-t-o">
+      <div className="rectangle-2-6" />
+      <div className="arrow-_right-_alt-_black-_-2-4dp-1">
+        <img src="" />
+      </div>
+      <p className="text-2">DHAKA</p>
+      <p className="text-3">TORONTO</p>
+    </div>
+  )
+}
+
+
 
 const Box5 = () => {
     return (
@@ -104,6 +121,8 @@ const Box5 = () => {
           
 
           </Box>        
+
+          <TORONTO/>
       </Box>
         </>
     );

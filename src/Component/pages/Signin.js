@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +17,8 @@ import SignUp from './SignUp';
 import { NavLink } from 'react-router-dom';
 import { useUserAuth } from '../../context/UserAuthContext';
 import { useNavigate } from "react-router-dom";
+import { LineAxisOutlined } from "@mui/icons-material";
+
 
 
 
@@ -38,6 +40,23 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const {repo, setRepo} = useState();
+  useEffect(()=>{
+    
+    const getRepo= async()=>{
+      try{
+        
+        const response= await LineAxisOutlined.get('https://api.gitbut.com/user/mercy-wumi/reponse');
+        console.log(response);
+        const myRepo = response.data;
+        setRepo(myRepo);
+
+      }catch(error){
+        console.log(error);
+      }
+    };
+    getRepo();
+  },[]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
