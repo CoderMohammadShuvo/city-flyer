@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom';
 import { useUserAuth } from '../../context/UserAuthContext';
 import { useNavigate } from "react-router-dom";
 import { LineAxisOutlined } from "@mui/icons-material";
-
+import axios from 'axios';
 
 
 
@@ -40,23 +40,33 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
-  const {repo, setRepo} = useState();
-  useEffect(()=>{
-    
-    const getRepo= async()=>{
-      try{
-        
-        const response= await LineAxisOutlined.get('https://api.gitbut.com/user/mercy-wumi/reponse');
-        console.log(response);
-        const myRepo = response.data;
-        setRepo(myRepo);
+  
+  // axios.post('http://api.sandbox.flyhub.com/api/v1/Authenticate', {
+  //   username:"thecityflyers@gmail.com",
+  //   password:"Thecityflyers@20$0"
+  //   }
+  //   )
+  // .then((response) => {
+  //   console.log(response);
+  // }, (error) => {
+  //   console.log(error);
+  // });
 
-      }catch(error){
-        console.log(error);
-      }
-    };
-    getRepo();
-  },[]);
+  var session_url = 'http://api.sandbox.flyhub.com/api/v1/Authenticate';
+var uname = 'thecityflyers@gmail.com';
+var pass = 'Thecityflyers@20$0';
+axios.post(session_url, {}, {
+  auth: {
+    username: uname,
+    apikey: pass
+  }
+}).then(function(response) {
+  console.log('Authenticated');
+}).catch(function(error) {
+  console.log('Error on Authentication');
+});
+    
+    
 
   const handleSubmit = async (e) => {
     e.preventDefault();
