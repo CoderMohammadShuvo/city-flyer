@@ -9,9 +9,10 @@ import BadgeIcon from '@mui/icons-material/Badge';
 
 
 const Namefield = () => {
+  const [value, setValue] = React.useState(null);
 
   const [age, setAge] = React.useState('');
-  const [value, setValue] = React.useState(new Date());
+ 
   const handleChange = (event) => {
     setAge(event.target.value);
   };

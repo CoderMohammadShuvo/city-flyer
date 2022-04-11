@@ -12,7 +12,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
+import { TextField } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import { Margin, Search } from "@mui/icons-material";
@@ -165,11 +165,18 @@ export default function Main() {
             </Typography>
           <UnstyledSelectSimple/>
           </Box>
+          <Box>
+            <Typography>
+              <h5>Cabin Class</h5>
+              <p>1-3</p>
+            </Typography>
+          <UnstyledSelectSimple/>
+          </Box>
           </Box>
 
             <Box sx={{display:'flex',alignItems:'center'}}>
               <Button sx={
-                {marginLeft:'200px',paddingInline:'100px',marginTop:'100px'}
+                {marginLeft:'50px',paddingInline:'100px',marginTop:'100px'}
               } variant="contained">Search</Button>
             </Box>
 

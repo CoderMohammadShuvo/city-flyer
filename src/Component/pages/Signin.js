@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
+import { Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleButton from 'react-google-button';
 import SignUp from './SignUp';
@@ -43,7 +43,7 @@ export default function SignInSide() {
   
   // axios.post('http://api.sandbox.flyhub.com/api/v1/Authenticate', {
   //   username:"thecityflyers@gmail.com",
-  //   password:"Thecityflyers@20$0"
+  //   password:"HSPOiK=~k2kwO73bXpSb_rNl=w9T1N7odIFnZmlvznn0H~5WRS"
   //   }
   //   )
   // .then((response) => {
@@ -54,7 +54,7 @@ export default function SignInSide() {
 
   var session_url = 'http://api.sandbox.flyhub.com/api/v1/Authenticate';
 var uname = 'thecityflyers@gmail.com';
-var pass = 'Thecityflyers@20$0';
+var pass = 'HSPOiK=~k2kwO73bXpSb_rNl=w9T1N7odIFnZmlvznn0H~5WRS';
 axios.post(session_url, {}, {
   auth: {
     username: uname,
